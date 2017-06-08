@@ -1,0 +1,12 @@
+#!/bin/zsh
+# Prints random argument
+# See: https://stackoverflow.com/a/24954467/170865
+
+emulate -RL zsh
+
+if [[ $# -eq 0 ]]; then
+    return 0;
+fi
+
+rr=$(( 1 + $RANDOM % $# ))
+echo $@[${rr}]
